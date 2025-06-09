@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->decimal('price', 8, 2);
             $table->integer('stock_quantity')->default(0);
-            $table->string('category');
+            $table->string('category'); 
+            $table->string('image_url')->nullable(); 
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

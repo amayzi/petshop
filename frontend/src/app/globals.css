@@ -1,26 +1,33 @@
+/* src/globals.css */
+/* Importa as classes utilitárias do Tailwind CSS para usar no projeto. */
 @import "tailwindcss";
 
+/* Define variáveis CSS globais para o tema claro (padrão). */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* Cor de fundo principal. */
+  --foreground: #171717; /* Cor do texto principal. */
 }
 
+/* Bloco de tema para configurar variáveis específicas. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background); /* Usa a variável de fundo definida acima. */
+  --color-foreground: var(--foreground); /* Usa a variável de texto definida acima. */
+  --font-sans: var(--font-geist-sans);  /* Define a fonte sans-serif padrão. */
+  --font-mono: var(--font-geist-mono);    /* Define a fonte monoespaçada padrão. */
 }
 
+/* Media query para detectar se o usuário prefere o esquema de cores escuro. */
 @media (prefers-color-scheme: dark) {
+  /* Sobrescreve as variáveis para o tema escuro. */
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a0a0a; /* Fundo escuro. */
+    --foreground: #ededed; /* Texto claro. */
   }
 }
 
+/* Estiliza o corpo (body) da página. */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background); /* Aplica a cor de fundo da variável. */
+  color: var(--foreground);      /* Aplica a cor do texto da variável. */
+  font-family: Arial, Helvetica, sans-serif; /* Define uma fonte de fallback. */
 }

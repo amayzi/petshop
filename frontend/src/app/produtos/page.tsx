@@ -16,9 +16,12 @@ interface Product {
 // Componente da página de Estoque. É assíncrono para poder buscar dados antes de renderizar.
 export default async function EstoquePage() {
   // Chama a API para buscar os produtos.
-  const response = await getProducts();
+  //const response = await getProducts();
   // Extrai a lista de produtos da resposta da API. Se não houver, usa um array vazio.
-  const products: Product[] = response?.data || [];
+  //const products: Product[] = response?.data || [];
+  const products: Product[] = await getProducts();
+
+  console.log('Produtos recebidos:', products);
 
   return (
     // Container principal da página com fundo branco.
